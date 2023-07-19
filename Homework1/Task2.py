@@ -12,3 +12,4 @@ while True:
         else: print("Составное")
         break
     else: print("Попробуйте дургое число")
+ 
