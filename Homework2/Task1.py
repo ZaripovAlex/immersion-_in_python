@@ -11,7 +11,7 @@ def func(num: int, base: int):
     temp = ''
     while num > 0:
         temp = num % base
-        num//=base
+        num //= base
         if temp > 10:
             match temp:
                 case 10:
@@ -32,6 +32,6 @@ def func(num: int, base: int):
 
 
 num = int(input("Введите число\n-> "))
-print(f"Число {num} в двоичном виде {func(num,BIN)} . При помощи bin() {bin(num)}")
-print(f"Число {num} в восьмеричном виде {func(num,OCT)} . При помощи oct() {oct(num)}")
-print(f"Число {num} в шестнадцатеричном виде {func(num,HEX)} . При помощи hex() {hex(num)}")
+print(f"Число {num} в двоичном виде {func(num, BIN)} . При помощи bin() {bin(num)}")
+print(f"Число {num} в восьмеричном виде {func(num, OCT)} . При помощи oct() {oct(num)}")
+print(f"Число {num} в шестнадцатеричном виде {func(num, HEX)} . При помощи hex() {hex(num)}")
