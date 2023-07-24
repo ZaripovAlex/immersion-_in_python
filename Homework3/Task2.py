@@ -4,6 +4,7 @@
 # (Может помочь метод translate из модуля string)
 import string
 from collections import deque
+from typing import List, Tuple, Any
 
 LIMIT = 10
 TEXT = "A scope defines the visibility of a name within a block. " \
@@ -52,20 +53,19 @@ def count_words(lst: list) -> dict:
     return d
 
 
-def sort_dict(d: dict) -> dict:
-    sorted_values = sorted(d.values())
-    sorted_dict = {}
-    for i in sorted_values:
-        for j in d.keys():
-            if d[j] == i:
-                sorted_dict[j] = d[j]
-
+def sort_dict(d: dict) -> list[tuple[Any, Any]]:
+    sorted_dict = sorted(d.items(), key=lambda x: x[1], reverse=True)
     return sorted_dict
 
 
+result = set()
 normalize_list = normalize_string(TEXT)
-temp_rez = count_words(normalize_list)
-# print(rez)
-temp_rez = sort_dict(temp_rez)
-result = list(deque(temp_rez, maxlen=LIMIT))
+interim_result = count_words(normalize_list)
+# print(interim_result)
+interim_result = sort_dict(interim_result)
+# print(interim_result)
+for elem in interim_result:
+    if LIMIT != 0:
+        LIMIT -= 1
+        result.add(elem)
 print(result)
