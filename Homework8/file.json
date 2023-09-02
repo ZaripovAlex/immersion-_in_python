@@ -1,0 +1,52 @@
+[
+  {
+    "name": "test_text.txt",
+    "extension": "txt",
+    "type": "file",
+    "parent": "test",
+    "size": 0
+  },
+  {
+    "name": "test2",
+    "parent": "test",
+    "type": "dir"
+  },
+  {
+    "name": "test3",
+    "parent": "test",
+    "type": "dir"
+  },
+  {
+    "name": "text1.txt",
+    "extension": "txt",
+    "type": "file",
+    "parent": "test2",
+    "size": 0
+  },
+  {
+    "name": "text2.txt",
+    "extension": "txt",
+    "type": "file",
+    "parent": "test2",
+    "size": 0
+  },
+  {
+    "name": "text3.txt",
+    "extension": "txt",
+    "type": "file",
+    "parent": "test2",
+    "size": 0
+  },
+  {
+    "name": "test5",
+    "parent": "test3",
+    "type": "dir"
+  },
+  {
+    "name": "test_text2.txt",
+    "extension": "txt",
+    "type": "file",
+    "parent": "test5",
+    "size": 0
+  }
+]
