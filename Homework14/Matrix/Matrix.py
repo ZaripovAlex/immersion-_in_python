@@ -5,7 +5,7 @@
 
 from random import randint
 import numpy as np
-import my_exceptions
+import Homework13.my_exceptions
 
 
 class Matrix:
@@ -18,6 +18,21 @@ class Matrix:
 	Метод generate() - Предназначен для генерации элементов матрицы в диапазоне от 0 до 9
 	Метод print_matrix() - Предназначен для вывода матрицы на экран
 
+	>>> m1 = Matrix(3, 3)
+	>>> m1.matrix = [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+	>>> m2 = Matrix(3, 3)
+	>>> m2.matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+	>>> m3 = Matrix(3, 3)
+	>>> m3.matrix = [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+	>>> m1 != m3
+	False
+	>>> m1 != m2
+	True
+	>>> m3 = m1 + m2
+	>>> m3.print_matrix()
+	[2, 4, 6]
+	[5, 7, 9]
+	[8, 10, 12]
 
 	"""
 	m: int = 0
@@ -35,7 +50,7 @@ class Matrix:
 			for _ in range(self.m):
 				try:
 					num = int(input("Введите элемент матрицы: "))
-				except my_exceptions.MyExceptionMatrixElemType():
+				except Homework13.my_exceptions.MyExceptionMatrixElemType():
 					print()
 				rez.append(num)
 			# print(rez)
@@ -72,17 +87,20 @@ class Matrix:
 
 
 if __name__ == '__main__':
-	m1 = Matrix(2, 2)
-	m1.input()
-	m1.print_matrix()
-	print()
-	m2 = Matrix(2, 2)
-	m2.input()
-	m2.print_matrix()
-	print()
-	print(m1 == m2)
-	print()
-	print(m1 * m2)
-	(m1+m2).print_matrix()
-	
+	import doctest
+	doctest.testmod(verbose=True)
+
+	# m1 = Matrix(2, 2)
+	# m1.input()
+	# m1.print_matrix()
+	# print()
+	# m2 = Matrix(2, 2)
+	# m2.input()
+	# m2.print_matrix()
+	# print()
+	# print(m1 == m2)
+	# print()
+	# print(m1 * m2)
+	# (m1+m2).print_matrix()
+
 
